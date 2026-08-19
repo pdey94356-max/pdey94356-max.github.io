@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Skills - Puja Dey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button onclick="setLang('bn')">বাংলা</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('de')">Deutsch</button>
+        <button onclick="setLang('sa')">संस्कृत</button>
+    </nav>
+
+    <a href="index.html" class="back-link">
+        <span data-lang="bn">← হোমে ফিরে যাও</span>
+        <span data-lang="en">← Back to Home</span>
+        <span data-lang="de">← Zurück zur Startseite</span>
+        <span data-lang="sa">← गृहपृष्ठं प्रति</span>
+    </a>
+
+    <section id="skills">
+        <h2 data-lang="bn">দক্ষতা</h2>
+        <h2 data-lang="en">Skills</h2>
+        <h2 data-lang="de">Fähigkeiten</h2>
+        <h2 data-lang="sa">कौशलानि</h2>
+
+        <div class="skill-category" data-lang="bn">
+            <h3>কেয়ারগিভিং</h3>
+            <ul><li>Elderly Care ট্রেনিং সম্পন্ন (Aastha Home Care Training Centre)</li></ul>
+        </div>
+        <div class="skill-category" data-lang="en">
+            <h3>Caregiving</h3>
+            <ul><li>Elderly Care training completed (Aastha Home Care Training Centre)</li></ul>
+        </div>
+        <div class="skill-category" data-lang="de">
+            <h3>Pflege</h3>
+            <ul><li>Ausbildung in Altenpflege abgeschlossen (Aastha Home Care Training Centre)</li></ul>
+        </div>
+        <div class="skill-category" data-lang="sa">
+            <h3>सेवा-कौशलम्</h3>
+            <ul><li>वृद्ध-सेवा-प्रशिक्षणं सम्पूर्णम् (Aastha Home Care Training Centre)</li></ul>
+        </div>
+
+        <div class="skill-category" data-lang="bn">
+            <h3>ভাষা দক্ষতা</h3>
+            <ul>
+                <li>বাংলা - মাতৃভাষা</li>
+                <li>ইংরেজি - মধ্যম মানের</li>
+                <li>জার্মান - B1 লেভেল সম্পন্ন</li>
+            </ul>
+        </div>
+        <div class="skill-category" data-lang="en">
+            <h3>Languages</h3>
+            <ul>
+                <li>Bangla - Native</li>
+                <li>English - Intermediate</li>
+                <li>German - B1 level completed</li>
+            </ul>
+        </div>
+        <div class="skill-category" data-lang="de">
+            <h3>Sprachen</h3>
+            <ul>
+                <li>Bengalisch - Muttersprache</li>
+                <li>Englisch - Mittelstufe</li>
+                <li>Deutsch - Niveau B1 abgeschlossen</li>
+            </ul>
+        </div>
+        <div class="skill-category" data-lang="sa">
+            <h3>भाषाकौशलानि</h3>
+            <ul>
+                <li>बङ्गभाषा - मातृभाषा</li>
+                <li>आङ्ग्लभाषा - मध्यमस्तरः</li>
+                <li>जर्मनभाषा - B1-स्तरः सम्पूर्णः</li>
+            </ul>
+        </div>
+
+        <div class="skill-category" data-lang="bn">
+            <h3>কম্পিউটার দক্ষতা</h3>
+            <ul>
+                <li>MS Office (Word, Excel, PowerPoint)</li>
+                <li>বেসিক ইন্টারনেট ও ইমেইল ব্যবহার</li>
+            </ul>
+        </div>
+        <div class="skill-category" data-lang="en">
+            <h3>Computer Skills</h3>
+            <ul>
+                <li>MS Office (Word, Excel, PowerPoint)</li>
+                <li>Basic Internet & Email usage</li>
+            </ul>
+        </div>
+        <div class="skill-category" data-lang="de">
+            <h3>Computerkenntnisse</h3>
+            <ul>
+                <li>MS Office (Word, Excel, PowerPoint)</li>
+                <li>Grundlegende Internet- & E-Mail-Nutzung</li>
+            </ul>
+        </div>
+        <div class="skill-category" data-lang="sa">
+            <h3>सङ्गणक-कौशलानि</h3>
+            <ul>
+                <li>MS Office (Word, Excel, PowerPoint)</li>
+                <li>मूलभूत अन्तर्जाल-ईमेल-प्रयोगः</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+            });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (event) event.target.classList.add('active');
+        }
+        setLang('bn');
+    </script>
+</body>
+</html>

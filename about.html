@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me - Puja Dey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button onclick="setLang('bn')">বাংলা</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('de')">Deutsch</button>
+        <button onclick="setLang('sa')">संस्कृत</button>
+    </nav>
+
+    <a href="index.html" class="back-link">
+        <span data-lang="bn">← হোমে ফিরে যাও</span>
+        <span data-lang="en">← Back to Home</span>
+        <span data-lang="de">← Zurück zur Startseite</span>
+        <span data-lang="sa">← गृहपृष्ठं प्रति</span>
+    </a>
+
+    <section id="about">
+        <h2 data-lang="bn" class="animate-fade">আমার সম্পর্কে</h2>
+        <h2 data-lang="en" class="animate-fade">About Me</h2>
+        <h2 data-lang="de" class="animate-fade">Über mich</h2>
+        <h2 data-lang="sa" class="animate-fade">मम विषये</h2>
+
+        <p data-lang="bn" class="animate-fade delay-1">
+            আমি পূজা দে, সরকারি সিটি কলেজ, চট্টগ্রামে Zoology বিভাগের একজন শিক্ষার্থী। 
+            পড়াশোনার পাশাপাশি আমি জার্মান ভাষা শিখছি এবং ভবিষ্যতে জার্মানিতে 
+            Ausbildung করার লক্ষ্যে প্রস্তুতি নিচ্ছি।
+        </p>
+        <p data-lang="en" class="animate-fade delay-1">
+            I am Puja Dey, a Zoology student at Government City College, Chattogram. 
+            Alongside my studies, I am learning German and preparing to pursue an 
+            Ausbildung (vocational training) in Germany.
+        </p>
+        <p data-lang="de" class="animate-fade delay-1">
+            Ich bin Puja Dey, Zoologiestudentin am Government City College, Chattogram. 
+            Neben meinem Studium lerne ich Deutsch und bereite mich darauf vor, eine 
+            Ausbildung in Deutschland zu machen.
+        </p>
+        <p data-lang="sa" class="animate-fade delay-1">
+            अहं पूजा देइ अस्मि, चट्टग्रामनगरे सरकारी-सिटी-महाविद्यालये प्राणिविज्ञानस्य छात्रा। 
+            अध्ययनेन सह अहं जर्मनभाषां शिक्षे, जर्मनीदेशे आउसबिल्दुंग-नामकं 
+            व्यावसायिक-प्रशिक्षणं कर्तुं सज्जा भवामि।
+        </p>
+
+        <p data-lang="bn" class="animate-fade delay-2">
+            আমি নিয়মিত আমার কাজিনদের দেখাশোনা করি, যা আমাকে যত্নশীল ও দায়িত্বশীল হতে শিখিয়েছে — 
+            এই গুণগুলো Elderly Care এবং Au Pair কাজের জন্য অত্যন্ত গুরুত্বপূর্ণ।
+        </p>
+        <p data-lang="en" class="animate-fade delay-2">
+            I regularly take care of my cousins, which has taught me patience and responsibility — 
+            qualities that are essential for Elderly Care and Au Pair work.
+        </p>
+        <p data-lang="de" class="animate-fade delay-2">
+            Ich kümmere mich regelmäßig um meine Cousins und Cousinen, was mir Geduld und 
+            Verantwortungsbewusstsein beigebracht hat — Eigenschaften, die für die Altenpflege 
+            und Au-Pair-Arbeit unerlässlich sind.
+        </p>
+        <p data-lang="sa" class="animate-fade
+        ">
+            अहं नियमितरूपेण स्वभ्रातृव्यान् पालयामि, येन मह्यं धैर्यं दायित्वं च शिक्षितम्।
+        </p>
+    </section>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+            });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (event) event.target.classList.add('active');
+        }
+        setLang('bn');
+    </script>
+</body>
+</html>
