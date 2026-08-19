@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Puja Dey - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button onclick="setLang('bn')">বাংলা</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('de')">Deutsch</button>
+        <button onclick="setLang('sa')">संस्कृत</button>
+    </nav>
+
+    <header>
+        <h1 data-lang="bn">পূজা দে</h1>
+        <h1 data-lang="en">Puja Dey</h1>
+        <h1 data-lang="de">Puja Dey</h1>
+        <h1 data-lang="sa">पूजा दे</h1>
+
+        <p data-lang="bn">Zoology শিক্ষার্থী | ভবিষ্যৎ Ausbildung প্রার্থী, জার্মানি</p>
+        <p data-lang="en">Zoology Student | Future Ausbildung Candidate, Germany</p>
+        <p data-lang="de">Zoologiestudentin | Zukünftige Ausbildungskandidatin, Deutschland</p>
+        <p data-lang="sa">प्राणिविज्ञान-छात्रा | जर्मनी-देशे भाविनी आउसबिल्डुंग-प्रार्थिनी</p>
+    </header>
+
+    <section id="about">
+        <h2 data-lang="bn">আমার সম্পর্কে</h2>
+        <h2 data-lang="en">About Me</h2>
+        <h2 data-lang="de">Über mich</h2>
+        <h2 data-lang="sa">मम विषये</h2>
+
+        <p data-lang="bn">
+            আমি পূজা দে, সরকারি সিটি কলেজ, চট্টগ্রামে Zoology বিভাগের একজন শিক্ষার্থী। 
+            পড়াশোনার পাশাপাশি আমি জার্মান ভাষা শিখছি এবং ভবিষ্যতে জার্মানিতে 
+            Ausbildung করার লক্ষ্যে প্রস্তুতি নিচ্ছি।
+        </p>
+        <p data-lang="en">
+            I am Puja Dey, a Zoology student at Government City College, Chattogram. 
+            Alongside my studies, I am learning German and preparing to pursue an 
+            Ausbildung (vocational training) in Germany.
+        </p>
+        <p data-lang="de">
+            Ich bin Puja Dey, Zoologiestudentin am Government City College, Chattogram. 
+            Neben meinem Studium lerne ich Deutsch und bereite mich darauf vor, eine 
+            Ausbildung in Deutschland zu machen.
+        </p>
+        <p data-lang="sa">
+            अहं पूजा देइ अस्मि, चट्टग्रामनगरे सरकारी-सिटी-महाविद्यालये प्राणिविज्ञानस्य छात्रा। 
+            अध्ययनेन सह अहं जर्मनभाषां शिक्षे, जर्मनीदेशे आउसबिल्डुंग-नामकं 
+            व्यावसायिक-प्रशिक्षणं कर्तुं सज्जा भवामि।
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2 data-lang="bn">দক্ষতা</h2>
+        <h2 data-lang="en">Skills</h2>
+        <h2 data-lang="de">Fähigkeiten</h2>
+        <h2 data-lang="sa">कौशलानि</h2>
+
+        <ul data-lang="bn">
+            <li>Elderly Care ট্রেনিং সম্পন্ন (Aastha Home Care Training Centre)</li>
+            <li>বাংলা - মাতৃভাষা</li>
+            <li>ইংরেজি - মধ্যম মানের</li>
+            <li>জার্মান - B1 লেভেল সম্পন্ন</li>
+        </ul>
+        <ul data-lang="en">
+            <li>Elderly Care training completed (Aastha Home Care Training Centre)</li>
+            <li>Bangla - Native</li>
+            <li>English - Intermediate</li>
+            <li>German - B1 level completed</li>
+        </ul>
+        <ul data-lang="de">
+            <li>Ausbildung in Altenpflege abgeschlossen (Aastha Home Care Training Centre)</li>
+            <li>Bengalisch - Muttersprache</li>
+            <li>Englisch - Mittelstufe</li>
+            <li>Deutsch - Niveau B1 abgeschlossen</li>
+        </ul>
+        <ul data-lang="sa">
+            <li>वृद्ध-सेवा-प्रशिक्षणं सम्पूर्णम् (Aastha Home Care Training Centre)</li>
+            <li>बङ्गभाषा - मातृभाषा</li>
+            <li>आङ्ग्लभाषा - मध्यमस्तरः</li>
+            <li>जर्मनभाषा - B1-स्तरः सम्पूर्णः</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2 data-lang="bn">যোগাযোগ</h2>
+        <h2 data-lang="en">Contact</h2>
+        <h2 data-lang="de">Kontakt</h2>
+        <h2 data-lang="sa">सम्पर्कः</h2>
+        <p>Email: pdey94356@gmail.com</p>
+    </section>
+
+    <script>
+    function setLang(lang) {
+        document.querySelectorAll('[data-lang]').forEach(el => {
+            el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+        });
+        document.querySelectorAll('nav button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        event.target.classList.add('active');
+    }
+    setLang('bn');
+</script>
+</body>
+</html>
