@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Resources - Puja Dey</title>
+    <meta name="description" content="Puja Dey's journey to Germany - challenges faced, ongoing struggles, and lessons learned while preparing for Au Pair and Ausbildung in Germany.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button onclick="setLang('bn')">বাংলা</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('de')">Deutsch</button>
+        <button onclick="setLang('sa')">संस्कृत</button>
+    </nav>
+
+    <a href="index.html" class="back-link">
+        <span data-lang="bn">← হোমে ফিরে যাও</span>
+        <span data-lang="en">← Back to Home</span>
+        <span data-lang="de">← Zurück zur Startseite</span>
+        <span data-lang="sa">← गृहपृष्ठं प्रति</span>
+    </a>
+
+    <header class="home-header">
+        <h1 data-lang="bn">জার্মানি যাওয়ার পথ</h1>
+        <h1 data-lang="en">My Journey to Germany</h1>
+        <h1 data-lang="de">Mein Weg nach Deutschland</h1>
+        <h1 data-lang="sa">जर्मनी-गमन-मार्गः</h1>
+
+        <p data-lang="bn">গত ২ বছরের অভিজ্ঞতা — যাতে তোমার পথ আরেকটু সহজ হয়</p>
+        <p data-lang="en">2 years of experience — to make your path a little easier</p>
+        <p data-lang="de">2 Jahre Erfahrung — damit dein Weg etwas leichter wird</p>
+        <p data-lang="sa">द्वयोः वर्षयोः अनुभवः — यत् तव मार्गः किञ्चित् सुलभः भवेत्</p>
+    </header>
+
+    <nav class="page-links">
+        <a href="challenges.html">
+            <span data-lang="bn">যেসব বাধার সম্মুখীন হয়েছি</span>
+            <span data-lang="en">Challenges I Faced</span>
+            <span data-lang="de">Herausforderungen, denen ich begegnet bin</span>
+            <span data-lang="sa">सम्मुखीभूताः बाधाः</span>
+        </a>
+        <a href="struggles.html">
+            <span data-lang="bn">এখনো যা নিয়ে স্ট্রাগল করছি</span>
+            <span data-lang="en">What I'm Still Struggling With</span>
+            <span data-lang="de">Womit ich noch kämpfe</span>
+            <span data-lang="sa">अद्यापि सङ्घर्षः</span>
+        </a>
+        <a href="lessons.html">
+            <span data-lang="bn">শুরু থেকে যা জানা উচিত ছিল</span>
+            <span data-lang="en">What I Wish I Knew From the Start</span>
+            <span data-lang="de">Was ich von Anfang an gewusst hätte</span>
+            <span data-lang="sa">आरम्भात् एव ज्ञातव्यम्</span>
+        </a>
+    </nav>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+            });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (event) event.target.classList.add('active');
+        }
+        setLang('bn');
+    </script>
+</body>
+</html>

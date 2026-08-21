@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel - Puja Dey</title>
+    <meta name="description" content="Puja Dey's travel photos and stories from places she has visited.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body oncontextmenu="return false;">
+    <nav>
+        <button onclick="setLang('bn')">বাংলা</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('de')">Deutsch</button>
+        <button onclick="setLang('sa')">संस्कृत</button>
+    </nav>
+
+    <a href="index.html" class="back-link">
+        <span data-lang="bn">← হোমে ফিরে যাও</span>
+        <span data-lang="en">← Back to Home</span>
+        <span data-lang="de">← Zurück zur Startseite</span>
+        <span data-lang="sa">← गृहपृष्ठं प्रति</span>
+    </a>
+
+    <header class="home-header">
+        <h1 data-lang="bn" class="animate-slide">ভ্রমণ</h1>
+        <h1 data-lang="en" class="animate-slide">Travel</h1>
+        <h1 data-lang="de" class="animate-slide">Reisen</h1>
+        <h1 data-lang="sa" class="animate-slide">भ्रमणम्</h1>
+        <p data-lang="bn" class="animate-slide">আমার ঘুরে বেড়ানো কিছু জায়গার গল্প</p>
+        <p data-lang="en" class="animate-slide">Stories from some places I've visited</p>
+        <p data-lang="de" class="animate-slide">Geschichten von Orten, die ich besucht habe</p>
+        <p data-lang="sa" class="animate-slide">मया दृष्टानां स्थानानां कथाः</p>
+    </header>
+
+    <section class="travel-place">
+        <h2 data-lang="bn" class="animate-slide">[স্থানের নাম ১]</h2>
+        <h2 data-lang="en" class="animate-slide">[Place Name 1]</h2>
+        <h2 data-lang="de" class="animate-slide">[Ortsname 1]</h2>
+        <h2 data-lang="sa" class="animate-slide">[स्थाननाम १]</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+        </div>
+        <p data-lang="bn" class="place-history animate-slide">[এই স্থানের ইতিহাস/বিবরণ এখানে লেখো]</p>
+        <p data-lang="en" class="place-history animate-slide">[History/description of this place goes here]</p>
+        <p data-lang="de" class="place-history animate-slide">[Geschichte/Beschreibung dieses Ortes]</p>
+        <p data-lang="sa" class="place-history animate-slide">[अस्य स्थानस्य इतिहासः]</p>
+    </section>
+
+    <section class="travel-place">
+        <h2 data-lang="bn" class="animate-slide">[স্থানের নাম ২]</h2>
+        <h2 data-lang="en" class="animate-slide">[Place Name 2]</h2>
+        <h2 data-lang="de" class="animate-slide">[Ortsname 2]</h2>
+        <h2 data-lang="sa" class="animate-slide">[स्थाननाम २]</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+        </div>
+        <p data-lang="bn" class="place-history animate-slide">[এই স্থানের ইতিহাস/বিবরণ এখানে লেখো]</p>
+        <p data-lang="en" class="place-history animate-slide">[History/description of this place goes here]</p>
+        <p data-lang="de" class="place-history animate-slide">[Geschichte/Beschreibung dieses Ortes]</p>
+        <p data-lang="sa" class="place-history animate-slide">[अस्य स्थानस्य इतिहासः]</p>
+    </section>
+
+    <section class="travel-place">
+        <h2 data-lang="bn" class="animate-slide">[স্থানের নাম ৩]</h2>
+        <h2 data-lang="en" class="animate-slide">[Place Name 3]</h2>
+        <h2 data-lang="de" class="animate-slide">[Ortsname 3]</h2>
+        <h2 data-lang="sa" class="animate-slide">[स्थाननाम ३]</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+            <div class="gallery-item"><span class="watermark">Puja Dey</span><div class="img-placeholder">📷</div></div>
+        </div>
+        <p data-lang="bn" class="place-history animate-slide">[এই স্থানের ইতিহাস/বিবরণ এখানে লেখো]</p>
+        <p data-lang="en" class="place-history animate-slide">[History/description of this place goes here]</p>
+        <p data-lang="de" class="place-history animate-slide">[Geschichte/Beschreibung dieses Ortes]</p>
+        <p data-lang="sa" class="place-history animate-slide">[अस्य स्थानस्य इतिहासः]</p>
+    </section>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+            });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (event) event.target.classList.add('active');
+        }
+        setLang('bn');
+        document.addEventListener('dragstart', function(e) { e.preventDefault(); });
+    </script>
+</body>
+</html>

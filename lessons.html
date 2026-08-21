@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>What I Wish I Knew From the Start - Puja Dey</title>
+    <meta name="description" content="Advice from Puja Dey - what she wishes she knew from the start of her Au Pair and Ausbildung journey to Germany.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <button onclick="setLang('bn')">বাংলা</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('de')">Deutsch</button>
+        <button onclick="setLang('sa')">संस्कृत</button>
+    </nav>
+
+    <a href="resources.html" class="back-link">
+        <span data-lang="bn">← Resources-এ ফিরে যাও</span>
+        <span data-lang="en">← Back to Resources</span>
+        <span data-lang="de">← Zurück zu Ressourcen</span>
+        <span data-lang="sa">← संसाधनानि प्रति</span>
+    </a>
+
+    <section id="about">
+        <h2 data-lang="bn" class="animate-fade">শুরু থেকে যা জানা উচিত ছিল</h2>
+        <h2 data-lang="en" class="animate-fade">What I Wish I Knew From the Start</h2>
+        <h2 data-lang="de" class="animate-fade">Was ich von Anfang an gewusst hätte</h2>
+        <h2 data-lang="sa" class="animate-fade">आरम्भात् एव ज्ञातव्यम्</h2>
+
+        <p data-lang="bn" class="animate-fade delay-1">
+            [এখানে তোমার লেখা বসবে — যা শুরুতেই জানলে সময়/কষ্ট বাঁচতো, 
+            অন্যদের জন্য পরামর্শ]
+        </p>
+        <p data-lang="en" class="animate-fade delay-1">
+            [Your content will go here]
+        </p>
+        <p data-lang="de" class="animate-fade delay-1">
+            [Dein Inhalt kommt hierher]
+        </p>
+        <p data-lang="sa" class="animate-fade delay-1">
+            [अत्र तव विषयः स्थास्यति]
+        </p>
+    </section>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+            });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (event) event.target.classList.add('active');
+        }
+        setLang('bn');
+    </script>
+</body>
+</html>
