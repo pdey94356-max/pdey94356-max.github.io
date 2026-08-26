@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome - Puja Dey</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             margin: 0;
@@ -33,6 +32,7 @@
             border-radius: 25px;
             font-size: 1em;
             text-decoration: none;
+            font-family: 'Segoe UI', Arial, sans-serif;
             opacity: 0;
             transition: background-color 0.2s;
         }
@@ -62,60 +62,60 @@
 </head>
 <body>
     <div class="welcome-text" id="text"></div>
-    <a href="index.html" class="enter-btn" id="enterBtn">Enter →</a>
+    <a href="home.html" class="enter-btn" id="enterBtn">Enter →</a>
 
-   <script>
-    const words = ["স্বাগতম", "Welcome", "Willkommen", "स्वागतम्"];
-    const textEl = document.getElementById("text");
-    const enterBtn = document.getElementById("enterBtn");
-    let wordIndex = 0;
+    <script>
+        const words = ["স্বাগতম", "Welcome", "Willkommen", "स्वागतम्"];
+        const textEl = document.getElementById("text");
+        const enterBtn = document.getElementById("enterBtn");
+        let wordIndex = 0;
 
-    function splitGraphemes(str) {
-        if (typeof Intl !== "undefined" && Intl.Segmenter) {
-            const seg = new Intl.Segmenter('bn', { granularity: 'grapheme' });
-            return Array.from(seg.segment(str), s => s.segment);
+        function splitGraphemes(str) {
+            if (typeof Intl !== "undefined" && Intl.Segmenter) {
+                const seg = new Intl.Segmenter('bn', { granularity: 'grapheme' });
+                return Array.from(seg.segment(str), s => s.segment);
+            }
+            return Array.from(str);
         }
-        return Array.from(str);
-    }
 
-    function typeWord(word, callback) {
-        textEl.innerHTML = "";
-        const chars = splitGraphemes(word);
-        let i = 0;
-        function addLetter() {
-            if (i < chars.length) {
-                const span = document.createElement("span");
-                span.className = "letter";
-                span.textContent = chars[i];
-                textEl.appendChild(span);
-                i++;
-                setTimeout(addLetter, 90);
+        function typeWord(word, callback) {
+            textEl.innerHTML = "";
+            const chars = splitGraphemes(word);
+            let i = 0;
+            function addLetter() {
+                if (i < chars.length) {
+                    const span = document.createElement("span");
+                    span.className = "letter";
+                    span.textContent = chars[i];
+                    textEl.appendChild(span);
+                    i++;
+                    setTimeout(addLetter, 90);
+                } else {
+                    setTimeout(callback, 900);
+                }
+            }
+            addLetter();
+        }
+
+        function showNextWord() {
+            if (wordIndex < words.length) {
+                typeWord(words[wordIndex], function() {
+                    textEl.classList.add("fade-out");
+                    setTimeout(function() {
+                        textEl.classList.remove("fade-out");
+                        wordIndex++;
+                        showNextWord();
+                    }, 600);
+                });
             } else {
-                setTimeout(callback, 900);
+                enterBtn.classList.add("show");
+                setTimeout(function() {
+                    window.location.href = "home.html";
+                }, 1800);
             }
         }
-        addLetter();
-    }
 
-    function showNextWord() {
-        if (wordIndex < words.length) {
-            typeWord(words[wordIndex], function() {
-                textEl.classList.add("fade-out");
-                setTimeout(function() {
-                    textEl.classList.remove("fade-out");
-                    wordIndex++;
-                    showNextWord();
-                }, 600);
-            });
-        } else {
-            enterBtn.classList.add("show");
-            setTimeout(function() {
-                window.location.href = "index.html";
-            }, 1800);
-        }
-    }
-
-    showNextWord();
-</script>
+        showNextWord();
+    </script>
 </body>
 </html>
