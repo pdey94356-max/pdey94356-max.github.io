@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>Puja Dey - Portfolio </title>
+    <meta name="description" content="Puja Dey - Zoology student from Bangladesh preparing for Au Pair and Ausbildung in Germany. Multilingual portfolio in Bangla, English, German and Sanskrit.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body
+    <nav>
+        <button onclick="setLang('bn')">বাংলা</button>
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('de')">Deutsch</button>
+        <button onclick="setLang('sa')">संस्कृत</button>
+    </nav>
+
+ <header class="home-header">
+    <div class="profile-photo animate-fade">
+        <img src="Puja.jpg.jpeg" alt="Puja Dey">
+    </div>
+    <h1 class="animate-fade delay-1">Puja Dey</h1>
+    <p data-lang="bn" class="animate-fade delay-2">Zoology শিক্ষার্থী | ভবিষ্যৎ Ausbildung প্রার্থী, জার্মানি</p>
+    <p data-lang="en" class="animate-fade delay-2">Zoology Student | Future Ausbildung Candidate, Germany</p>
+    <p data-lang="de" class="animate-fade delay-2">Zoologiestudentin | Zukünftige Ausbildungskandidatin, Deutschland</p>
+    <p data-lang="sa" class="animate-fade delay-2">प्राणिविज्ञान-छात्रा | जर्मनी-देशे भाविनी आउसबिल्दुंग-प्रार्थिनी</p>
+</header>
+
+    <nav class="page-links">
+        <a href="about.html">
+            <span data-lang="bn">আমার সম্পর্কে</span>
+            <span data-lang="en">About Me</span>
+            <span data-lang="de">Über mich</span>
+            <span data-lang="sa">मम विषये</span>
+        </a>
+        <a href="skills.html">
+            <span data-lang="bn">দক্ষতা</span>
+            <span data-lang="en">Skills</span>
+            <span data-lang="de">Fähigkeiten</span>
+            <span data-lang="sa">कौशलानि</span>
+        </a>
+        <a href="contact.html">
+            <span data-lang="bn">যোগাযোগ</span>
+            <span data-lang="en">Contact</span>
+            <span data-lang="de">Kontakt</span>
+            <span data-lang="sa">सम्पर्कः</span>
+        </a>
+        <a href="resources.html">
+    <span data-lang="bn">জার্মানি যাওয়ার পথ</span>
+    <span data-lang="en">My Journey to Germany</span>
+    <span data-lang="de">Mein Weg nach Deutschland</span>
+    <span data-lang="sa">जर्मनी-गमन-मार्गः</span>
+        </a>
+        <a href="travel.html">
+    <span data-lang="bn">ভ্রমণ</span>
+    <span data-lang="en">Travel</span>
+    <span data-lang="de">Reisen</span>
+    <span data-lang="sa">भ्रमणम्</span>
+</a>
+    </nav>
+
+    <script>
+        function setLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+            });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            if (event) event.target.classList.add('active');
+        }
+        setLang('bn');
+    </script>
+</body>
+</html>
